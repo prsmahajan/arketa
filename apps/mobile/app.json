@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Arketa",
+    "slug": "arketa",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "arketa",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.arketa.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.arketa.app"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": ["expo-router", "expo-secure-store"]
+  }
+}
