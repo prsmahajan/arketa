@@ -1,82 +1,65 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { 
   ChevronLeft, 
   ChevronRight, 
-  ChevronDown,
   Clock
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button, Modal, Select, Input } from '@/components/ui';
 
 import ClassesHeader from '@/components/dashboard/classes-header';
-import AppointmentsFilters from '@/components/dashboard/filters/appointments-filters';
+import ScheduleFilters from '@/components/dashboard/filters/schedule-filters';
+import ScheduleView from '@/components/dashboard/schedule/schedule-view';
+import { ViewType } from '@/components/dashboard/filters/view-switcher';
 
 export default function AppointmentsListPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [modalState, setModalState] = useState<{ isOpen: boolean; time: string }>({
     isOpen: false,
     time: ''
   });
+  const [view, setView] = useState<ViewType>('day');
 
-  // Generate 24 hours: 12am, 1am, ..., 11pm
-  const hours = Array.from({ length: 24 }, (_, i) => {
-    const h = i % 12 === 0 ? 12 : i % 12;
-    const ampm = i < 12 ? 'am' : 'pm';
-    return { label: `${h}${ampm}`, value: i };
-  });
+  const dateParam = searchParams.get('date');
+  const getSafeDate = () => {
+    if (!dateParam) return new Date();
+    const parts = dateParam.split('-');
+    return new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+  };
+  const dateObj = getSafeDate();
 
-  const handleSlotClick = (hour: number, slotIndex: number) => {
-    // slotIndex 0-5 (00, 10, 20, 30, 40, 50)
-    const minute = slotIndex * 10;
-    const h = hour % 12 === 0 ? 12 : hour % 12;
-    const ampm = hour < 12 ? 'AM' : 'PM';
-    const timeString = `${h}:${minute.toString().padStart(2, '0')}`;
+  const handleSlotClick = (date: Date) => {
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const h = hours % 12 === 0 ? 12 : hours % 12;
+    // const ampm = hours < 12 ? 'AM' : 'PM';
+    const timeString = `${h}:${minutes.toString().padStart(2, '0')}`;
     
     setModalState({
       isOpen: true,
-      time: timeString // Store basic time string, ideally use Date object
+      time: timeString
     });
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-140px)]">
+    <div className="flex flex-col h-[calc(100vh-50px)]">
       {/* Tabs */}
       <ClassesHeader />
 
       {/* Filters Bar */}
-      <AppointmentsFilters />
+      <ScheduleFilters view={view} onViewChange={setView} />
 
       {/* Calendar View */}
-      <div className="flex-1 bg-white border border-gray-200 rounded-lg overflow-hidden flex flex-col">
-        {/* Header */}
-        <div className="h-10 border-b border-gray-100 flex items-center justify-center bg-gray-50/50 sticky top-0 z-10">
-          <span className="text-sm font-semibold text-gray-900">Unassigned Room</span>
-        </div>
-
-        {/* Time Grid */}
-        <div className="flex-1 overflow-y-auto">
-          {hours.map((hour) => (
-            <div key={hour.value} className="relative min-h-[120px] border-b border-[#bbb]">
-              {/* Time Label */}
-              <div className="absolute left-0 top-0 bottom-0 w-16 border-r border-gray-100 p-1 text-center z-10 pointer-events-none">
-                <span className="text-xs text-[#333] font-medium block">{hour.label}</span>
-              </div>
-              
-              {/* Content Area - Spans full width behind label */}
-              <div className="absolute inset-0 flex flex-col z-0">
-                {[0, 1, 2, 3, 4, 5].map((slot) => (
-                  <div 
-                    key={slot} 
-                    className="flex-1 border-b border-gray-200 border-dashed p-2 last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer"
-                    onClick={() => handleSlotClick(hour.value, slot)}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ScheduleView 
+        mode={view}
+        date={dateObj}
+        onSlotClick={handleSlotClick}
+        className="flex-1 bg-white border border-gray-200 rounded-lg overflow-hidden flex flex-col"
+      />
 
       {/* Add Appointment Modal */}
       <Modal 

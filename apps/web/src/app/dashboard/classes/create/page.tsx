@@ -53,9 +53,9 @@ export default function CreateClassPage() {
             <div key={s.number} className="flex items-center gap-2">
               <div 
                 className={cn(
-                  "w-12 h-12 rounded-full flex items-center justify-center text-lg font-medium transition-colors cursor-pointer",
+                  "w-16 h-16 rounded-full flex items-center justify-center text-xl font-medium transition-colors",
                   step === s.number ? "bg-[#566578] text-white" : "bg-gray-100 text-gray-500",
-                  s.number < step ? "hover:bg-[#566578] hover:text-white" : "cursor-default"
+                  s.number < step ? "cursor-pointer hover:bg-[#566578] hover:text-white" : "cursor-default"
                 )}
                 onClick={() => {
                   if (s.number < step) {
