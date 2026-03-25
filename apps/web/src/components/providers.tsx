@@ -10,8 +10,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
     () => new QueryClient({ defaultOptions: { queries: { staleTime: 30_000, retry: 1 } } }),
   );
   const { setProfile, setCommunityId, setLoading } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true); // Set mounted to true after the initial render
+
     const supabase = createClient();
 
     async function init() {
@@ -108,5 +111,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
     return () => subscription.unsubscribe();
   }, [setProfile, setCommunityId, setLoading]);
 
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
+  return <QueryClientProvider client={queryClient}>{mounted ? children : null}</QueryClientProvider>;
 }
