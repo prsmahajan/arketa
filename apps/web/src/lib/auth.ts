@@ -1,7 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
-import type { Profile } from '@arketa/shared';
+import type { Profile } from '@aghor/shared';
 
 interface AuthState {
   profile: Profile | null;

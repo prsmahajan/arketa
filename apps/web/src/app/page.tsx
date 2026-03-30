@@ -7,7 +7,7 @@ import { useAuthStore } from '@/lib/auth';
 import { Card, Button, Textarea, Avatar, Spinner, EmptyState, Badge } from '@/components/ui';
 import { timeAgo } from '@/lib/utils';
 import { Heart, MessageCircle, Trash2, Send, Flame, ChevronDown } from 'lucide-react';
-import type { Post } from '@arketa/shared';
+import type { Post } from '@aghor/shared';
 import { PageLayout } from '@/components/page-layout';
 
 interface FeedPost extends Post {

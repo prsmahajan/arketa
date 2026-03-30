@@ -7,7 +7,7 @@ import { useAuthStore } from '@/lib/auth';
 import { Card, Button, Spinner, Avatar, Badge, Textarea, EmptyState, Input } from '@/components/ui';
 import { formatDate, formatCurrency, timeAgo } from '@/lib/utils';
 import { Users, Calendar, ArrowLeft, Send, Heart, MessageCircle, Zap, Smartphone } from 'lucide-react';
-import type { Program, WeeklyPrompt } from '@arketa/shared';
+import type { Program, WeeklyPrompt } from '@aghor/shared';
 
 import { PageLayout } from '@/components/page-layout';
 

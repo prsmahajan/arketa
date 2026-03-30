@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase';
 import { Button, Input } from '@/components/ui';
-import type { UserRole } from '@arketa/shared';
+import type { UserRole } from '@aghor/shared';
 import { Info } from 'lucide-react';
 
 export default function AuthPage() {
@@ -64,7 +64,7 @@ export default function AuthPage() {
         <div className="w-full max-w-[400px] mx-auto">
           <div className="mb-10">
             <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-              {isLogin ? 'Welcome back' : 'Get started with Arketa'}
+              {isLogin ? 'Welcome back' : 'Get started with Aghor'}
             </h1>
           </div>
 
@@ -114,7 +114,7 @@ export default function AuthPage() {
             <div className="pt-2">
               {!isLogin && (
                 <p className="text-xs text-gray-500 mb-6 leading-relaxed">
-                  By signing up you agree to arketa&apos;s <Link href="/terms" className="text-gray-900 hover:underline">Terms of Service</Link> and <Link href="/privacy" className="text-gray-900 hover:underline">Privacy Policy</Link>
+                  By signing up you agree to aghor&apos;s <Link href="/terms" className="text-gray-900 hover:underline">Terms of Service</Link> and <Link href="/privacy" className="text-gray-900 hover:underline">Privacy Policy</Link>
                 </p>
               )}
 
@@ -147,12 +147,12 @@ export default function AuthPage() {
       <div className="hidden lg:flex w-1/2 bg-white flex-col justify-center px-12 xl:px-24 relative overflow-hidden">
         <div className="w-full max-w-[480px]">
           <div className="flex items-center gap-2 mb-8">
-            {/* Arketa Logo Mark */}
+            {/* Aghor Logo Mark */}
             <div className="flex gap-[3px]">
               <div className="w-[10px] h-6 border-2 border-black rounded-l-full border-r-0"></div>
               <div className="w-[10px] h-6 bg-black rounded-r-full"></div>
             </div>
-            <span className="text-2xl font-bold tracking-tight">arketa</span>
+            <span className="text-2xl font-bold tracking-tight">aghor</span>
           </div>
           
           <h2 className="text-[42px] leading-[1.1] font-bold text-gray-900 mb-6 tracking-tight">
@@ -160,7 +160,7 @@ export default function AuthPage() {
           </h2>
           
           <p className="text-lg text-gray-500 leading-relaxed mb-12 font-light">
-            Running your modern wellness studio just got easier. With arketa, sell everything from in-person classes to online programs — all from your own website.
+            Running your modern wellness studio just got easier. With aghor, sell everything from in-person classes to online programs — all from your own website.
           </p>
           
           <div className="flex flex-col gap-3">

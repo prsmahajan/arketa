@@ -43,7 +43,7 @@ export default function JoinPage() {
 
     // If it's a paid community, redirect to mobile
     if (community.membership_entitlement_id) {
-      alert('This community requires a paid membership. Please use the Arketa mobile app (iOS/Android) to subscribe and join.');
+      alert('This community requires a paid membership. Please use the Aghor mobile app (iOS/Android) to subscribe and join.');
       return;
     }
 

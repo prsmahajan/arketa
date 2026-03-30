@@ -1,4 +1,4 @@
-# Arketa — Community Wellness Platform
+# Aghor — Community Wellness Platform
 
 A community-first wellness platform where creators run private communities, sell structured programs/cohorts, host classes, and engage their members.
 
@@ -14,7 +14,7 @@ A community-first wellness platform where creators run private communities, sell
 ## Project Structure
 
 ```
-arketa/
+aghor/
 ├── apps/
 │   ├── web/              # Next.js web app (creator dashboard + member)
 │   └── mobile/           # Expo mobile app (member-first, purchases here)
@@ -39,8 +39,8 @@ arketa/
 ### 1. Clone and install
 
 ```bash
-git clone <repo-url> arketa
-cd arketa
+git clone <repo-url> aghor
+cd aghor
 pnpm install
 ```
 
@@ -126,8 +126,8 @@ After running the migration, create test users via Supabase Dashboard > Auth > U
 
 | Email | Password | Role |
 |-------|----------|------|
-| creator@arketa.dev | password123 | creator |
-| member1@arketa.dev | password123 | member |
+| creator@aghor.dev | password123 | creator |
+| member1@aghor.dev | password123 | member |
 
 When creating users, add this to the user metadata:
 ```json
@@ -139,7 +139,7 @@ When creating users, add this to the user metadata:
 ### How it works
 
 1. **Creator** configures products in App Store Connect / Google Play Console
-2. **Creator** maps RevenueCat product IDs to their community (membership) or programs in Arketa settings
+2. **Creator** maps RevenueCat product IDs to their community (membership) or programs in Aghor settings
 3. **Member** opens the mobile app and taps "Enroll" or "Join"
 4. **RevenueCat SDK** presents the native App Store / Play Store purchase sheet
 5. On success, the app immediately enrolls the member locally

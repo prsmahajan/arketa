@@ -23,7 +23,7 @@ importers:
 
   apps/mobile:
     dependencies:
-      '@arketa/shared':
+      '@aghor/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       '@react-navigation/native':
@@ -87,7 +87,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@arketa/shared':
+      '@aghor/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       '@supabase/ssr':

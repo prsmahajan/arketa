@@ -7,7 +7,7 @@ import { useAuthStore } from '@/lib/auth';
 import { Card, Button, Spinner, EmptyState, Badge, Input, Textarea } from '@/components/ui';
 import { formatDateTime, cn } from '@/lib/utils';
 import { Calendar, MapPin, Video, Clock, Plus, X, Check } from 'lucide-react';
-import type { Class } from '@arketa/shared';
+import type { Class } from '@aghor/shared';
 
 import { PageLayout } from '@/components/page-layout';
 

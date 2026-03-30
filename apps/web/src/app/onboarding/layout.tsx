@@ -27,7 +27,7 @@ export default function OnboardingLayout({
               <div className="w-[10px] h-6 border-2 border-white rounded-l-full border-r-0"></div>
               <div className="w-[10px] h-6 bg-white rounded-r-full"></div>
             </div>
-            <span className="text-2xl font-bold tracking-tight">arketa</span>
+            <span className="text-2xl font-bold tracking-tight">aghor</span>
           </div>
         </div>
 

@@ -9,7 +9,7 @@ import { Card, Button, Spinner, EmptyState, Badge, Input, Textarea } from '@/com
 import { GridSkeleton } from '@/components/dashboard/skeletons';
 import { formatDate, formatCurrency, cn } from '@/lib/utils';
 import { BookOpen, Users, Calendar, Plus, X } from 'lucide-react';
-import type { Program } from '@arketa/shared';
+import type { Program } from '@aghor/shared';
 
 import { PageLayout } from '@/components/page-layout';
 

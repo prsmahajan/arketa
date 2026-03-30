@@ -1,5 +1,5 @@
 {
-  "name": "@arketa/mobile",
+  "name": "@aghor/mobile",
   "version": "0.1.0",
   "private": true,
   "main": "expo-router/entry",
@@ -11,7 +11,7 @@
     "ios": "expo start --ios"
   },
   "dependencies": {
-    "@arketa/shared": "workspace:*",
+    "@aghor/shared": "workspace:*",
     "@supabase/supabase-js": "^2.47.0",
     "@react-navigation/native": "^7.0.0",
     "@tanstack/react-query": "^5.60.0",

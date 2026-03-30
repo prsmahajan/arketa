@@ -11,19 +11,45 @@ export function DashboardHeader() {
   const { toggleSidebar } = useUIStore();
   const pathname = usePathname();
 
-  // Determine breadcrumbs/title based on pathname
-  let title = 'Home';
-  let subtitle = '';
+  // Route → title mapping. Longest prefix wins.
+  const ROUTES: Record<string, string> = {
+    '/dashboard/classes/schedule': 'Classes > Full Schedule',
+    '/dashboard/classes/appointments': 'Classes > Appointments',
+    '/dashboard/classes/events': 'Classes > Events',
+    '/dashboard/classes/create': 'Classes > Create',
+    '/dashboard/classes/classes': 'Classes > Classes',
+    '/dashboard/classes': 'Classes',
+    '/dashboard/beyond-classes/video': 'Beyond Classes > Video',
+    '/dashboard/beyond-classes/communities': 'Beyond Classes > Communities',
+    '/dashboard/beyond-classes/products': 'Beyond Classes > Products',
+    '/dashboard/beyond-classes/invoices': 'Beyond Classes > Invoices',
+    '/dashboard/beyond-classes/board': 'Beyond Classes > Board',
+    '/dashboard/beyond-classes': 'Beyond Classes',
+    '/dashboard/customers/clients': 'Customers > Clients',
+    '/dashboard/customers/segments': 'Customers > Segments',
+    '/dashboard/customers/comments': 'Customers > Comments',
+    '/dashboard/customers': 'Customers',
+    '/dashboard/availability': 'Availability',
+    '/dashboard/appointments': 'Appointments',
+    '/dashboard/clients': 'Clients',
+    '/dashboard/chats': 'Chats',
+    '/dashboard/feed': 'Feed',
+    '/dashboard/club': 'Club',
+    '/dashboard/marathon': 'Marathon',
+    '/dashboard/meals': 'Meals',
+    '/dashboard/workout': 'Workout',
+    '/dashboard/portfolio': 'Portfolio',
+    '/dashboard/users': 'Users',
+    '/dashboard/settings': 'Settings',
+    '/settings': 'Settings',
+  };
 
-  if (pathname.startsWith('/dashboard/classes')) {
-    title = 'Classes';
-    if (pathname.includes('/schedule')) subtitle = 'Full Schedule';
-    else if (pathname.includes('/appointments')) subtitle = 'Appointments';
-    else if (pathname.includes('/events')) subtitle = 'Events';
-    else if (pathname.endsWith('/classes')) subtitle = 'Classes';
-  } else if (pathname.includes('/dashboard/settings')) {
-    title = 'Settings';
-  }
+  const matched = Object.keys(ROUTES)
+    .filter((r) => pathname.startsWith(r))
+    .sort((a, b) => b.length - a.length)[0];
+
+  const raw = matched ? ROUTES[matched] : 'Home';
+  const [title, subtitle] = raw.includes(' > ') ? raw.split(' > ') : [raw, ''];
 
   return (
     <header className="h-12 bg-white border-b border-gray-100 flex items-center justify-between px-6 sticky top-0 z-30 transition-all duration-300">

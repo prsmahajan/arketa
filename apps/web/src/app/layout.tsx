@@ -6,7 +6,7 @@ import { Providers } from '@/components/providers';
 const raleway = Raleway({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Arketa — Community Wellness Platform',
+  title: 'Aghor — Community Wellness Platform',
   description: 'Build and grow your wellness community. Run programs, host classes, engage your people.',
 };
 

@@ -1,21 +1,21 @@
 {
   "expo": {
-    "name": "Arketa",
-    "slug": "arketa",
+    "name": "Aghor",
+    "slug": "aghor",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "arketa",
+    "scheme": "aghor",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.arketa.app"
+      "bundleIdentifier": "com.aghor.app"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       },
-      "package": "com.arketa.app"
+      "package": "com.aghor.app"
     },
     "web": {
       "bundler": "metro",

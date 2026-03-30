@@ -10,7 +10,7 @@ A SaaS platform combining two products under one codebase:
 - **Vertical 1 — Studio Management**: For pilates studios, yoga studios, fitness studios. Class scheduling, booking, member management, payment collection.
 - **Vertical 2 — Wellness Professionals**: For nutritionists, dietitians, fitness coaches. Client management, session booking, payment collection in-app.
 
-Inspired by: Arketa.com (studio side) + WellnessZ.in (wellness pro side). Not a clone — a better, more premium version targeting a gap between these two.
+Inspired by: Aghor.com (studio side) + WellnessZ.in (wellness pro side). Not a clone — a better, more premium version targeting a gap between these two.
 
 ### Revenue goal
 $5,000 USD/month recurring. This is the north star. Every decision (pricing, niche, feature priority) is filtered through this.

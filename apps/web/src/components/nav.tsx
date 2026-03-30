@@ -39,7 +39,7 @@ export function Nav() {
             <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">A</span>
             </div>
-            <span className="text-lg font-bold text-gray-900 tracking-tight hidden sm:block">arketa</span>
+            <span className="text-lg font-bold text-gray-900 tracking-tight hidden sm:block">aghor</span>
           </Link>
 
           {/* Desktop Nav */}

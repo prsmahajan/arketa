@@ -17,7 +17,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         isSidebarCollapsed ? "pl-16" : "pl-64"
       )}>
         <DashboardHeader />
-        <main className="max-w-[1600px] mx-auto">
+        <main>
           {children}
         </main>
       </div>
